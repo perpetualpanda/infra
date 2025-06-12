@@ -42,14 +42,6 @@ resource "vultr_dns_record" "mc" {
   ttl    = 300
 }
 
-resource "vultr_dns_record" "map_mc" {
-  domain = vultr_dns_domain.root.id
-  name   = "map.mc"
-  type   = "A"
-  data   = module.host_offworld.main_ip
-  ttl    = 300
-}
-
 ######################
 # DNS - GitHub Pages #
 ######################
