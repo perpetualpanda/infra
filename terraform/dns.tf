@@ -34,6 +34,22 @@ resource "vultr_dns_record" "sync" {
   ttl    = 300
 }
 
+resource "vultr_dns_record" "mc" {
+  domain = vultr_dns_domain.root.id
+  name   = "mc"
+  type   = "A"
+  data   = module.host_offworld.main_ip
+  ttl    = 300
+}
+
+resource "vultr_dns_record" "map_mc" {
+  domain = vultr_dns_domain.root.id
+  name   = "map.mc"
+  type   = "A"
+  data   = module.host_offworld.main_ip
+  ttl    = 300
+}
+
 ######################
 # DNS - GitHub Pages #
 ######################
