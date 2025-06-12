@@ -24,8 +24,8 @@ resource "vultr_instance" "service_vm" {
 
 resource "vultr_dns_record" "vm_hostname_record" {
   domain = var.vultr_dns_domain_id
-  name = local.subdomain
-  data = vultr_instance.service_vm.main_ip
-  ttl  = 300
-  type = "A"
+  name   = local.subdomain
+  data   = vultr_instance.service_vm.main_ip
+  ttl    = 300
+  type   = "A"
 }
